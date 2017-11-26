@@ -1,4 +1,4 @@
-package tracker;
+package java_project;
 
 
 public class Info {
@@ -8,8 +8,6 @@ public class Info {
     private String planName;
     private double initialD;
     private double monthlyD;
-    
-    
     
     public Info(){ 
     }
@@ -53,8 +51,4 @@ public class Info {
     public void setMonthlyD(double monthlyD){
         this.monthlyD = monthlyD;
     }
-    
-    
-    
-    
 }

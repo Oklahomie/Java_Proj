@@ -1,19 +1,18 @@
 
-package tracker;
+package java_project;
+
 import java.io.*;
 import java.util.*;
 
 public class Tracker {
-
+    
     static double interest;
     static double finalV;
     static double convertRate;
     
-    public static void main(String[] args) throws Exception{
-     boolean loop = true;  
-     
-     
-        
+    public static void Tracker() throws Exception{
+        boolean loop = true;  
+      
      Scanner sc = new Scanner(System.in);
      java.io.File info = new java.io.File("Tracker.txt");
      
@@ -25,6 +24,7 @@ public class Tracker {
      Info initialD = new Info();
      Info monthlyD = new Info();
      Info months = new Info();
+     Date currentTime = new Date();
      
         
         System.out.println("Welcome to the tracker");
@@ -42,8 +42,12 @@ public class Tracker {
             name.setName(Nm);
             pw.println("Name: "+name.getName());
             
-            System.out.print("Date(dd-MM-YYYY): ");
-            date.setDate(sc2.nextLine());
+            System.out.print("Generating current Date\n");
+            System.out.println("---------------------------------------------------------");
+            
+            System.out.println("Current date: "+currentTime.toString());
+            System.out.println("---------------------------------------------------------");
+            date.setDate(currentTime.toString());
             pw.println("Date: "+date.getDate());
             
             System.out.println("Enter which plan chosen\n");
@@ -497,10 +501,10 @@ public class Tracker {
                 M = M+24;
                 
             }
-            
+            System.out.println("---------------------------------------------------------");
             System.out.print("The final amount of the savings plan after "+M+" months is ");
             System.out.printf("%.2f", finalV);
-            
+            System.out.println("---------------------------------------------------------");
             System.out.println("\nDo you want to retry with a different amount of months?");
             System.out.println("1: YES\n2: NO");
             System.out.print("Option: ");
@@ -530,12 +534,8 @@ public class Tracker {
             
         } else {
                 System.out.println("Invalid input. Please try again");
-                System.out.print("Option: ");
-                option = sc.nextInt();
+    
         }
         }//while
-  
     }
-    
-    
 }
